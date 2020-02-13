@@ -28,16 +28,22 @@ namespace GameplayIngredients.Controllers
 
         [Header("Buttons")]
         public string JumpButton = "Jump";
+        public string interactButton = "Interact";
+        public string fireObjButton = "Fire";
 
         public override Vector2 Look => m_Look;
         public override Vector2 Movement => m_Movement;
 
         public override ButtonState Jump => m_Jump;
+        public override ButtonState Interact => m_Interact;
+        public override ButtonState FireObj => m_FireObj;
 
         Vector2 m_Movement;
         Vector2 m_Look;
 
         ButtonState m_Jump;
+        ButtonState m_Interact;
+        ButtonState m_FireObj;
 
         public override void UpdateInput()
         {
@@ -61,6 +67,8 @@ namespace GameplayIngredients.Controllers
                 m_Look += new Vector2(Input.GetAxisRaw(MouseHorizontalAxis), Input.GetAxisRaw(MouseVerticalAxis));
 
             m_Jump = GetButtonState(JumpButton);
+            m_Interact = GetButtonState(interactButton);
+            m_FireObj = GetButtonState(fireObjButton);
         }
     }
 }

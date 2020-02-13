@@ -17,6 +17,8 @@ namespace GameplayIngredients.Controllers
         public abstract Vector2 Look { get; }
         public abstract Vector2 Movement { get; }
         public abstract ButtonState Jump { get; }
+        public abstract ButtonState Interact { get; }
+        public abstract ButtonState FireObj { get; }
 
         public abstract void UpdateInput();
 

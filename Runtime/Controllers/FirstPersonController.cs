@@ -44,10 +44,15 @@ namespace GameplayIngredients.Controllers
         public void Start()
         {
             m_Controller = GetComponent<CharacterController>();
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
         }
 
         public void Update()
         {
+
             if (m_Camera == null) return;
             if (m_Input == null) return;
 
